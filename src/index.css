@@ -1,7 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
 
+/* Optional: Add a smooth scroll to the whole page */
+html {
+  scroll-behavior: smooth;
+}
 @layer base {
   :root {
     /* Light theme variables */
