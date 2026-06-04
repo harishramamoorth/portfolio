@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { GraduationCap, Calendar, Award, BookOpen, Sparkles, ChevronRight } from 'lucide-react';
 
 const education = [

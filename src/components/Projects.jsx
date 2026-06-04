@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ExternalLink, Github, Star, Sparkles, FolderGit2 } from 'lucide-react';
 
 const projects = [
@@ -7,7 +7,7 @@ const projects = [
     company: "Personal Project",
     tech: ["Python", "MySQL", "HTML/CSS", "JS"],
     desc: "Full-featured e‑commerce platform with product management, reviews, secure checkout, and customer support.",
-    github: "https://github.com/harishramamoorthy",
+    github: "https://github.com/harishramamoorth?tab=repositories",
     live: "#",
     stars: 4,
     image: "/project/car.png",
@@ -20,7 +20,7 @@ const projects = [
     company: "MRG Engineering",
     tech: ["Python", "MongoDB", "Express", "React"],
     desc: "Real‑time investment tracking, interactive dashboards, and secure user authentication for enterprise clients.",
-    github: "https://github.com/harishramamoorthy",
+    github: "https://github.com/harishramamoorth?tab=repositories",
     live: "https://investor.mrgengg.com/investors",
     stars: 5,
     image: "/project/Investor.png",
@@ -33,7 +33,7 @@ const projects = [
     company: "Fire Safety Company",
     tech: ["React", "Node.js", "MongoDB", "Tailwind"],
     desc: "Full‑featured e‑commerce platform for fire safety equipment with educational resources and equipment analysis tools.",
-    github: "https://github.com/harishramamoorthy",
+    github: "https://github.com/harishramamoorth?tab=repositories",
     live: "https://fire-safety-rosy.vercel.app/projects",
     stars: 5,
     image: "/project/firesafety.png",
@@ -46,13 +46,26 @@ const projects = [
     company: "MRG Logistics",
     tech: ["React", "Express", "PostgreSQL", "Leaflet"],
     desc: "Real‑time truck tracking, load matching, route optimization, and transparent shipment tracking for logistics.",
-    github: "https://github.com/harishramamoorthy",
+    github: "https://github.com/harishramamoorth?tab=repositories",
     live: "https://logistic-delta-ecru.vercel.app",
     stars: 5,
     image: "/project/logistic.png",
     theme: "cyan",
     glow: "group-hover:shadow-[0_20px_50px_rgba(6,182,212,0.15)]",
     border: "group-hover:border-cyan-500/30"
+  },
+   {
+    title: " E‑commerce Bookstore",
+    company: "Personal Project",
+    tech: ["React", "Vite", "Razorpay", "Tailwind CSS"],
+    desc: "Modern e‑commerce platform for authentic  literature, featuring multilingual support, secure checkout, and scholarly‑verified publications.",
+    github: "https://github.com/harishramamoorth?tab=repositories",
+    live: "https://www.ift-mrg.shop/",
+    stars: 5,
+    image: "/project/ecommer-bookstore.jpg",
+    theme: "purple",
+    glow: "group-hover:shadow-[0_20px_50px_rgba(168,85,247,0.15)]",
+    border: "group-hover:border-purple-500/30"
   }
 ];
 

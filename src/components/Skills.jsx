@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Code, Database, Layout, Server, Zap } from 'lucide-react';
 
 const skills = [

@@ -1,5 +1,5 @@
 // src/components/LiquidGlassCard.jsx
-import React from 'react';
+
 
 const LiquidGlassCard = ({ children, className = "", hover = true }) => {
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Github, Linkedin, Download, MapPin, Phone, Maximize2, Minimize2, ExternalLink, Briefcase } from 'lucide-react';
 
 const Hero = () => {
@@ -67,12 +67,12 @@ const Hero = () => {
                 View Projects <Briefcase size={20} className="group-hover:rotate-12 transition-transform" />
               </a>
               <a 
-                href="/Harish.R_resume.pdf" 
-                download 
-                className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-[#1e2436] hover:bg-gray-50 dark:hover:bg-[#2a324a] border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white rounded-2xl font-bold transition-all hover:scale-105 shadow-sm"
-              >
-                Resume <Download size={20} />
-              </a>
+  href="/Harish_Resume.pdf"   // ✅ Changed from "/Harish.R_resume.pdf"
+  download 
+  className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-[#1e2436] hover:bg-gray-50 dark:hover:bg-[#2a324a] border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white rounded-2xl font-bold transition-all hover:scale-105 shadow-sm"
+>
+  Resume <Download size={20} />
+</a>
             </div>
 
             {/* Connection Footer */}

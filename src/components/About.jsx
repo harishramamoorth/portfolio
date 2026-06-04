@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { 
   Quote, Cloud, Server, Code2, Globe, 
   Target, GraduationCap, MapPin, Activity, Layers 
