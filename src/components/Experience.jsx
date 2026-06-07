@@ -37,13 +37,13 @@ const experiences = [
 const Experience = () => {
   return (
     <section id="experience" className="py-24 bg-gray-50 dark:bg-[#050810] relative overflow-hidden transition-colors duration-300">
-      
+
       {/* Background Decor */}
       <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-blue-900/5 dark:bg-blue-900/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
       <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-purple-900/5 dark:bg-purple-900/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
 
       <div className="container-custom relative z-10">
-        
+
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
           <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-wider uppercase mb-6">
@@ -54,10 +54,10 @@ const Experience = () => {
           </h2>
           <div className="w-20 h-1.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full mx-auto"></div>
         </div>
-        
+
         {/* Timeline Container */}
         <div className="max-w-4xl mx-auto relative">
-          
+
           {/* Vertical Glowing Timeline Line */}
           <div className="absolute left-[21px] md:left-[27px] top-6 bottom-6 w-1 bg-gradient-to-b from-cyan-500 via-purple-500 to-orange-500 rounded-full opacity-30 dark:opacity-50"></div>
 
@@ -67,7 +67,7 @@ const Experience = () => {
 
               return (
                 <div key={idx} className="relative pl-14 md:pl-20 group cursor-default">
-                  
+
                   {/* Animated Timeline Dot */}
                   <div className="absolute left-0 top-1 md:top-2 flex items-center justify-center">
                     <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br ${exp.color} p-[2px] shadow-lg z-10 transition-all duration-500 ${isActive ? 'scale-110' : 'group-hover:scale-125 group-hover:rotate-6'}`}>
@@ -81,15 +81,15 @@ const Experience = () => {
 
                   {/* Experience Card Wrapper (For glowing border effect) */}
                   <div className={`relative rounded-2xl p-[1px] transition-all duration-500 ease-out 
-                    ${isActive 
+                    ${isActive
                       ? `bg-gradient-to-br ${exp.color} ${exp.shadow} translate-x-1 md:translate-x-2` // Active styling
                       : `bg-gradient-to-br from-gray-200 to-gray-100 dark:from-white/10 dark:to-white/5 group-hover:translate-x-2 md:group-hover:translate-x-4 group-hover:from-purple-400 group-hover:to-pink-500 ${exp.shadow}` // Past styling
                     }
                   `}>
-                    
+
                     {/* Inner Card */}
                     <div className="relative p-6 md:p-8 rounded-[15px] bg-white dark:bg-[#0a0f1c] h-full overflow-hidden">
-                      
+
                       {/* Active "Current Role" Badge */}
                       {isActive && (
                         <div className="absolute top-0 right-0">
@@ -118,11 +118,11 @@ const Experience = () => {
                               {exp.company}
                             </p>
                           </div>
-                          
+
                           {/* Date Badge */}
                           <span className={`inline-flex items-center gap-2 text-sm font-semibold whitespace-nowrap shadow-sm transition-colors px-4 py-2 rounded-full border 
-                            ${isActive 
-                              ? 'bg-cyan-50 dark:bg-cyan-900/20 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800/50' 
+                            ${isActive
+                              ? 'bg-cyan-50 dark:bg-cyan-900/20 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800/50'
                               : 'text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-white/10 border-gray-200 dark:border-white/10 group-hover:border-purple-500/30'
                             }
                           `}>
@@ -142,8 +142,8 @@ const Experience = () => {
 
                         {/* Highlights / Duties */}
                         <div className={`rounded-xl p-5 border transition-colors duration-500
-                          ${isActive 
-                            ? 'bg-cyan-50/50 dark:bg-cyan-900/10 border-cyan-100 dark:border-cyan-900/30' 
+                          ${isActive
+                            ? 'bg-cyan-50/50 dark:bg-cyan-900/10 border-cyan-100 dark:border-cyan-900/30'
                             : 'bg-gray-50 dark:bg-white/5 border-gray-100 dark:border-white/5 group-hover:bg-gray-100 dark:group-hover:bg-white/10'
                           }
                         `}>
