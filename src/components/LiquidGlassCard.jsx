@@ -25,6 +25,16 @@ const LiquidGlassCard = ({ children, className = "", ...props }) => {
 
   const handleMouseMove = (e) => {
     if (!ref.current) return;
+
+    // Smoothly flatten card rotation when hovering interactive elements
+    // to prevent browser click cancellation caused by moving 3D components.
+    const isInteractive = e.target.closest('a, button, [role="button"]');
+    if (isInteractive) {
+      mouseX.set(0);
+      mouseY.set(0);
+      return;
+    }
+
     const rect = ref.current.getBoundingClientRect();
 
     // Calculate normalized coordinates (-0.5 to 0.5) for tilt

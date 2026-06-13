@@ -37,6 +37,15 @@ const Hero = () => {
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"]);
 
   const handleMouseMovePortrait = (e) => {
+    // If hovering the sound overlay button, reset tilt to flat
+    // to guarantee click events fire successfully without browser cancellation.
+    const isButton = e.target.closest('button');
+    if (isButton) {
+      x.set(0);
+      y.set(0);
+      return;
+    }
+
     const rect = e.currentTarget.getBoundingClientRect();
     // Calculate mouse position relative to the center of the container (-0.5 to 0.5)
     const width = rect.width;
@@ -161,7 +170,7 @@ const Hero = () => {
 
             <motion.div variants={textItem} className="flex flex-col sm:flex-row sm:items-center gap-8 w-full pt-8 border-t border-gray-200 dark:border-white/5">
               <div className="flex items-center gap-4">
-                <a href="https://github.com/repos" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:text-cyan-500 rounded-xl transition-all hover:-translate-y-1"><Github size={22} /></a>
+                <a href="https://github.com/harishramamoorth?tab=repositories" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:text-cyan-500 rounded-xl transition-all hover:-translate-y-1"><Github size={22} /></a>
                 <a href="https://www.linkedin.com/in/harishramamoorthy/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:text-blue-500 rounded-xl transition-all hover:-translate-y-1"><Linkedin size={22} /></a>
               </div>
               <div className="flex items-center gap-6 text-sm font-bold tracking-wide">
