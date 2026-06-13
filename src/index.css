@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer components {
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
@@ -11,6 +12,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 @layer base {
   :root {
     /* Light theme variables */
@@ -24,6 +26,7 @@ html {
     --accent-purple: 139, 92, 246;
     --card-bg: 255, 255, 255;
   }
+
   .dark {
     --bg-primary: 7, 11, 20;
     --bg-secondary: 10, 15, 28;
@@ -33,7 +36,7 @@ html {
     --border-color: 30, 42, 74;
     --card-bg: 15, 22, 41;
   }
-  
+
   body {
     background-color: rgb(var(--bg-primary));
     color: rgb(var(--text-primary));
@@ -45,7 +48,7 @@ html {
   .container-custom {
     @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;
   }
-  
+
   /* Theme-aware glass card */
   .glass-card-dark {
     background-color: rgba(var(--bg-card), 0.8);
@@ -53,35 +56,39 @@ html {
     border: 1px solid rgba(var(--border-color), 0.3);
     @apply rounded-2xl shadow-xl transition-all duration-300;
   }
-  
+
   /* Badge */
   .badge {
     @apply inline-flex items-center px-4 py-1.5 rounded-full border border-teal-500/30 bg-teal-500/10 text-teal-400 text-sm font-medium;
   }
-  
+
   /* Buttons */
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-lg font-medium transition-transform hover:scale-105 shadow-[0_0_15px_rgba(6,182,212,0.3)];
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-lg font-medium transition-transform hover:scale-105 shadow-[0_0_15px_rgba(6, 182, 212, 0.3)];
   }
+
   .btn-secondary {
     @apply inline-flex items-center gap-2 px-6 py-3 bg-[#1e2436] hover:bg-[#2a324a] border border-[#2a324a] text-white rounded-lg font-medium transition-all;
   }
-  
+
   /* Section titles */
   .section-title {
     @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-4;
   }
+
   .section-divider {
     @apply w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full mx-auto mb-6;
   }
+
   .section-sub {
     @apply text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 text-base sm:text-lg;
   }
-  
+
   /* Gradient text helpers */
   .gradient-text-cyan {
     @apply bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent;
   }
+
   .gradient-text-purple {
     @apply bg-gradient-to-r from-purple-400 to-purple-500 bg-clip-text text-transparent;
   }
@@ -89,14 +96,46 @@ html {
 
 @layer utilities {
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
+
   .animate-fade-up {
     animation: fadeUp 0.6s ease-out forwards;
   }
-  
-  ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: rgb(var(--bg-secondary)); }
-  ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #06b6d4, #8b5cf6); border-radius: 4px; }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--bg-secondary));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #06b6d4, #8b5cf6);
+    border-radius: 4px;
+  }
+}
+
+/* Add this to your src/index.css */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
 }

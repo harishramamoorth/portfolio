@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
@@ -25,29 +25,33 @@ function App() {
       <CustomCursor />
 
       {/* AnimatePresence allows the Preloader to play its slide-up exit animation */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         {isLoading && (
           <Preloader key="preloader" onComplete={() => setIsLoading(false)} />
         )}
       </AnimatePresence>
 
-      {/* Main Portfolio Content */}
-      {!isLoading && (
-        <div className="animate-fade-in">
-          <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <Skills />
-            <Experience />
-            <Projects />
-            <Education />
-            <Certifications />
-            <Contact />
-          </main>
-          <Footer />
-        </div>
-      )}
+      {/* Main Portfolio Content (Pre-rendered for butter-smooth transition without mounting stutter) */}
+      <motion.div
+        key="content"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isLoading ? 0 : 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        style={{ pointerEvents: isLoading ? "none" : "auto" }}
+      >
+        <Navbar />
+        <main>
+          <Hero isLoading={isLoading} />
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Education />
+          <Certifications />
+          <Contact />
+        </main>
+        <Footer />
+      </motion.div>
       
     </div>
   );

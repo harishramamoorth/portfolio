@@ -69,34 +69,34 @@ const Projects = () => {
   // Cards enter with a 3D tilt and spring bounce
   const cardVariants = {
     hidden: { opacity: 0, y: 80, rotateX: 15 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      rotateX: 0, 
-      transition: { type: "spring", stiffness: 80, damping: 20, mass: 1 } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      transition: { type: "spring", stiffness: 80, damping: 20, mass: 1 }
     }
   };
 
   // Tech pills pop in sequentially inside the card
   const techVariants = {
     hidden: { opacity: 0, scale: 0.5 },
-    visible: { 
-      opacity: 1, 
-      scale: 1, 
-      transition: { type: "spring", stiffness: 200, damping: 10 } 
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { type: "spring", stiffness: 200, damping: 10 }
     }
   };
 
   return (
     <section id="projects" className="py-24 bg-gray-50 dark:bg-[#050810] relative overflow-hidden transition-colors duration-300">
-      
+
       {/* Background Decor */}
       <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-cyan-900/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
 
       <div className="container-custom relative z-10">
-        
+
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20, filter: "blur(10px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -109,7 +109,7 @@ const Projects = () => {
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight mb-4">
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">Projects</span>
           </h2>
-          <motion.div 
+          <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: "5rem" }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -121,7 +121,7 @@ const Projects = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -131,12 +131,21 @@ const Projects = () => {
           {projects.map((proj, idx) => (
             <motion.div key={idx} variants={cardVariants} className="h-full transform-style-3d">
               {/* Inherits the 3D mouse tracking from LiquidGlassCard */}
-              <LiquidGlassCard className="h-full flex flex-col p-0 group">
-                
+              <LiquidGlassCard
+                className="interactive-card h-full flex flex-col p-0 group border border-gray-200/50 dark:border-white/5"
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                  borderColor: "rgba(6, 182, 212, 0.6)",
+                  boxShadow: "0 20px 40px rgba(6, 182, 212, 0.25)"
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+
                 {/* Premium Browser Window Wrapper for Image */}
                 <div className="p-3 md:p-4 bg-gray-100/50 dark:bg-[#111827] border-b border-gray-200 dark:border-white/5 rounded-t-[2rem]">
                   <div className="relative h-56 sm:h-64 rounded-xl overflow-hidden shadow-sm border border-gray-200/50 dark:border-white/5 bg-gray-200 dark:bg-gray-800">
-                    
+
                     {/* Image with continuous slow pan and hover zoom */}
                     <motion.div
                       whileHover={{ scale: 1.05 }}
@@ -184,7 +193,7 @@ const Projects = () => {
                     {proj.desc}
                   </p>
 
-                  <motion.div 
+                  <motion.div
                     initial="hidden"
                     whileInView="visible"
                     variants={{ visible: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } } }}
@@ -192,9 +201,9 @@ const Projects = () => {
                     className="flex flex-wrap gap-2 mb-8"
                   >
                     {proj.tech.map(t => (
-                      <motion.span 
+                      <motion.span
                         variants={techVariants}
-                        key={t} 
+                        key={t}
                         className="px-3 py-1.5 bg-gray-50 dark:bg-[#161f33] border border-gray-200 dark:border-white/5 rounded-lg text-xs font-mono font-semibold text-gray-700 dark:text-gray-300 group-hover:border-cyan-500/30 hover:bg-cyan-50 dark:hover:bg-cyan-900/30 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all duration-300 shadow-sm cursor-default"
                       >
                         {t}
@@ -204,36 +213,36 @@ const Projects = () => {
 
                   {/* Action Buttons */}
                   <div className="flex flex-wrap gap-4 mt-auto pt-6 border-t border-gray-100 dark:border-white/10 relative z-20">
-                    <motion.a 
+                    <motion.a
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      href={proj.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                      href={proj.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="hover-trigger flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 text-gray-800 dark:text-white font-bold transition-all border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-md"
                     >
                       <Github size={18} /> Code
                     </motion.a>
 
                     {proj.live === "#" ? (
-                      <motion.div 
+                      <motion.div
                         whileHover={{ scale: 1.02 }}
-                        className="flex-1 flex-items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gray-50 dark:bg-[#0f1629] text-gray-400 dark:text-gray-500 font-bold border border-dashed border-gray-300 dark:border-gray-700 cursor-not-allowed"
+                        className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gray-50 dark:bg-[#0f1629] text-gray-400 dark:text-gray-500 font-bold border border-dashed border-gray-300 dark:border-gray-700 cursor-not-allowed"
                       >
                         In Progress
                       </motion.div>
                     ) : (
-                      <motion.a 
+                      <motion.a
                         whileHover={{ scale: 1.05, y: -2, boxShadow: "0px 10px 20px rgba(6, 182, 212, 0.3)" }}
                         whileTap={{ scale: 0.95 }}
-                        href={proj.live} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                        href={proj.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="hover-trigger flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold shadow-lg shadow-cyan-500/25 relative overflow-hidden group/btn"
                       >
                         {/* Shimmer sweep effect inside button */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-[150%] skew-x-[25deg] group-hover/btn:animate-[shimmer_1.5s_infinite]" />
-                        <ExternalLink size={18} className="relative z-10" /> 
+                        <ExternalLink size={18} className="relative z-10" />
                         <span className="relative z-10">Live Demo</span>
                       </motion.a>
                     )}
@@ -245,7 +254,8 @@ const Projects = () => {
         </motion.div>
       </div>
 
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes shimmer {
           100% { transform: translateX(150%); }
         }

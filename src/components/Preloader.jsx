@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const Preloader = ({ onComplete }) => {
-  // Wait exactly 2.5 seconds before signaling the app to show the main content
+  // Wait exactly 3.2 seconds before signaling the app to show the main content
   useEffect(() => {
     const timer = setTimeout(() => {
       onComplete();
-    }, 2500);
+    }, 3200);
     return () => clearTimeout(timer);
   }, [onComplete]);
 
@@ -19,7 +19,7 @@ const Preloader = ({ onComplete }) => {
       opacity: 1,
       transition: {
         staggerChildren: 0.15,
-        delayChildren: 0.2,
+        delayChildren: 0.4,
       }
     },
     exit: {
@@ -36,7 +36,7 @@ const Preloader = ({ onComplete }) => {
       opacity: 1,
       y: 0,
       rotateX: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { type: "spring", stiffness: 100, damping: 10 }
     }
   };
 
@@ -50,7 +50,6 @@ const Preloader = ({ onComplete }) => {
     }
   };
 
-
   return (
     <motion.div
       variants={container}
@@ -61,11 +60,36 @@ const Preloader = ({ onComplete }) => {
     >
       {/* Subtle Pulsing Background Glow */}
       <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1.2, opacity: 0.15 }}
-        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-        className="absolute w-[300px] h-[300px] bg-cyan-500 rounded-full blur-[100px] pointer-events-none"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.25, 0.1]
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        className="absolute w-[300px] h-[300px] bg-cyan-500 rounded-full blur-[120px] pointer-events-none left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
       />
+
+      {/* Avatar Reveal */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          type: "spring",
+          bounce: 0.4,
+          duration: 1.2,
+          delay: 0.2
+        }}
+        className="w-24 h-24 mb-6 rounded-full border-2 border-cyan-500/50 overflow-hidden z-10 shadow-[0_0_25px_rgba(6,182,212,0.4)]"
+      >
+        <img
+          src="/IMG_7255.png"
+          alt="Harish"
+          className="w-full h-full object-cover object-top"
+        />
+      </motion.div>
 
       {/* Staggered 3D Text Reveal */}
       <div className="flex space-x-1 sm:space-x-2 z-10" style={{ perspective: "1000px" }}>
@@ -79,8 +103,8 @@ const Preloader = ({ onComplete }) => {
           </motion.span>
         ))}
       </div>
-
-      {/* New: Subtitle Reveal */}
+      
+      {/* Subtitle Reveal */}
       <motion.p
         variants={subtitle}
         className="mt-4 z-10 text-xs sm:text-sm font-bold uppercase tracking-[0.4em] text-gray-300 drop-shadow-md"
@@ -92,13 +116,13 @@ const Preloader = ({ onComplete }) => {
       <motion.div
         initial={{ width: 0, opacity: 0 }}
         animate={{ width: "200px", opacity: 1 }}
-        transition={{ duration: 1, delay: 1.3, ease: "easeOut" }}
+        transition={{ duration: 1.8, delay: 1.0, ease: "easeOut" }}
         className="mt-8 h-[2px] bg-white/10 rounded-full overflow-hidden relative z-10"
       >
         <motion.div
           initial={{ x: "-100%" }}
           animate={{ x: "100%" }}
-          transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
           className="w-full h-full bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_10px_rgba(6,182,212,0.8)]"
         />
       </motion.div>
