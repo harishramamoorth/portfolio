@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { Github, Linkedin, Download, MapPin, Phone, Briefcase, VolumeX, Volume2 } from 'lucide-react';
 
-const Hero = () => {
+const Hero = ({ isLoading }) => {
   // Parallax tracking for background orbs
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -66,23 +66,52 @@ const Hero = () => {
 
   // Video Audio controls
   const [isMuted, setIsMuted] = useState(false);
+  const [playCount, setPlayCount] = useState(0);
   const videoRef = useRef(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {
-        // Autoplay unmuted blocked by browser policy. Fallback to muted autoplay.
+    if (!isLoading && videoRef.current) {
+      setIsMuted(false);
+      videoRef.current.muted = false;
+      videoRef.current.play().catch((err) => {
+        console.log("Autoplay unmuted blocked, falling back to muted:", err);
         setIsMuted(true);
+        if (videoRef.current) {
+          videoRef.current.muted = true;
+          videoRef.current.play().catch(e => console.log("Muted autoplay blocked:", e));
+        }
       });
     }
-  }, []);
+  }, [isLoading]);
+
+  const handleVideoEnded = () => {
+    setPlayCount(prev => {
+      const nextCount = prev + 1;
+      if (nextCount >= 2) {
+        setIsMuted(true);
+        if (videoRef.current) {
+          videoRef.current.muted = true;
+        }
+      }
+      if (videoRef.current) {
+        videoRef.current.play().catch(err => console.log("Loop play error:", err));
+      }
+      return nextCount;
+    });
+  };
 
   const handleToggleMute = (e) => {
     e.stopPropagation();
-    setIsMuted(prev => !prev);
-    if (videoRef.current) {
-      videoRef.current.play().catch(err => console.log("Play error on toggle: ", err));
-    }
+    setIsMuted(prev => {
+      const nextMute = !prev;
+      if (videoRef.current) {
+        videoRef.current.muted = nextMute;
+        if (!nextMute) {
+          videoRef.current.play().catch(err => console.log("Play error on unmute:", err));
+        }
+      }
+      return nextMute;
+    });
   };
 
   const scrollToProjects = (e) => {
@@ -203,10 +232,10 @@ const Hero = () => {
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                 autoPlay
-                loop
                 muted={isMuted}
                 playsInline
                 preload="auto"
+                onEnded={handleVideoEnded}
                 src="/this_goog_remove_the_typing_so-Picsart-BackgroundRemover.webm"
                 style={{
                   transform: "translateZ(50px) scale(1.35)",

@@ -1,6 +1,6 @@
 // src/components/Skills.jsx
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Database, Server, Cpu, Terminal, Code, HardDrive, Layout } from 'lucide-react';
 
 const skills = [
@@ -88,72 +88,54 @@ const Skills = () => {
                 className="interactive-card group relative p-6 rounded-2xl bg-white/40 dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 backdrop-blur-md shadow-lg cursor-pointer flex flex-col justify-center h-44 overflow-hidden"
               >
                 {/* Subtle ambient glow behind the card on hover */}
-                <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-xl bg-gradient-to-r ${skill.color} pointer-events-none`}></div>
+                <div className={`absolute inset-0 rounded-2xl transition-opacity duration-300 blur-xl bg-gradient-to-r ${skill.color} pointer-events-none ${isHovered ? 'opacity-10' : 'opacity-0'}`}></div>
 
-                <AnimatePresence mode="wait">
-                  {!isHovered ? (
-                    <motion.div
-                      key="default"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.15 }}
-                      className="flex flex-col items-center text-center justify-center h-full w-full z-10"
-                    >
-                      {/* Animated Icon Container */}
-                      <motion.div
-                        animate={{ y: [0, -4, 0] }}
-                        transition={{ duration: 4, repeat: Infinity, delay: idx * 0.2, ease: "easeInOut" }}
-                        className="p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-900/40 mb-3 border border-gray-200/50 dark:border-white/5 shadow-inner"
-                      >
-                        {skill.icon}
-                      </motion.div>
+                {/* Default State: Fades/slides out on hover */}
+                <div className={`flex flex-col items-center text-center justify-center h-full w-full z-10 transition-all duration-300 ease-out transform ${isHovered ? 'opacity-0 -translate-y-3 pointer-events-none' : 'opacity-100 translate-y-0'}`}>
+                  {/* Animated Icon Container */}
+                  <motion.div
+                    animate={{ y: [0, -4, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, delay: idx * 0.2, ease: "easeInOut" }}
+                    className="p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-900/40 mb-3 border border-gray-200/50 dark:border-white/5 shadow-inner"
+                  >
+                    {skill.icon}
+                  </motion.div>
 
-                      <h3 className="font-bold text-lg text-gray-800 dark:text-white tracking-tight">
-                        {skill.name}
-                      </h3>
+                  <h3 className="font-bold text-lg text-gray-800 dark:text-white tracking-tight">
+                    {skill.name}
+                  </h3>
 
-                      <span className="text-xs text-gray-500 dark:text-gray-400 mt-1 font-medium">
-                        {skill.desc}
+                  <span className="text-xs text-gray-500 dark:text-gray-400 mt-1 font-medium">
+                    {skill.desc}
+                  </span>
+                </div>
+
+                {/* Hover State: Fades/slides in on hover */}
+                <div className={`absolute inset-6 flex flex-col justify-between z-10 text-left transition-all duration-300 ease-out transform ${isHovered ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-3 pointer-events-none'}`}>
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-black text-xs text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">
+                        Expertise
+                      </h4>
+                      <span className="text-2xl font-black text-gray-900 dark:text-white">
+                        {skill.level}%
                       </span>
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="hovered"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.15 }}
-                      className="flex flex-col justify-between h-full z-10 w-full text-left"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-black text-xs text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">
-                            Expertise
-                          </h4>
-                          <span className="text-2xl font-black text-gray-900 dark:text-white">
-                            {skill.level}%
-                          </span>
-                        </div>
-                        <h3 className="font-bold text-base text-gray-800 dark:text-white leading-tight">
-                          {skill.fullName}
-                        </h3>
-                      </div>
+                    </div>
+                    <h3 className="font-bold text-base text-gray-800 dark:text-white leading-tight">
+                      {skill.fullName}
+                    </h3>
+                  </div>
 
-                      {/* Animated Progress Bar */}
-                      <div className="w-full mt-4">
-                        <div className="w-full bg-gray-100 dark:bg-[#0f1629] rounded-full h-3 border border-gray-200 dark:border-white/5 overflow-hidden shadow-inner relative">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            animate={{ width: `${skill.level}%` }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 shadow-[0_0_10px_rgba(6,182,212,0.6)]"
-                          />
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                  {/* Progress Bar Container */}
+                  <div className="w-full mt-4">
+                    <div className="w-full bg-gray-100 dark:bg-[#0f1629] rounded-full h-3 border border-gray-200 dark:border-white/5 overflow-hidden shadow-inner relative">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 shadow-[0_0_10px_rgba(6,182,212,0.6)] transition-[width] duration-700 ease-out"
+                        style={{ width: isHovered ? `${skill.level}%` : '0%' }}
+                      />
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             );
           })}
