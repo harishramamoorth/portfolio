@@ -5,6 +5,16 @@ import LiquidGlassCard from './LiquidGlassCard';
 
 const projects = [
   {
+    title: "Binzux",
+    company: "Personal Project",
+    tech: ["React.js", "Node.js", "MongoDB", "Express"],
+    desc: "A modern business networking and collaboration platform that connects professionals and companies seamlessly. Built with a full-stack React.js and Node.js architecture for real-time interactions.",
+    github: "https://github.com/harishramamoorth?tab=repositories",
+    live: "https://biznex-alpha.vercel.app",
+    stars: 5,
+    image: "/project/binzux.jpg",
+  },
+  {
     title: "Online Car Accessories Portal",
     company: "Personal Project",
     tech: ["Python", "MySQL", "HTML/CSS", "JS"],

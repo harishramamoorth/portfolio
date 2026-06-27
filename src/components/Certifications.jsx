@@ -26,6 +26,18 @@ const certifications = [
     shadow: "group-hover:shadow-[0_0_40px_-10px_rgba(249,115,22,0.4)]",
     btnTheme: "from-orange-500 to-red-600 shadow-orange-500/25"
   },
+  {
+    name: "Internship Certificate",
+    type: "PDF Document",
+    place: "SSS Smart Tech",
+    description: "Hands-on internship experience in a professional tech environment, gaining practical skills and industry exposure.",
+    file: "/cretificate/SSS Smart tech certificate.pdf",
+    icon: <FileText size={18} />,
+    theme: "from-violet-400 via-purple-500 to-fuchsia-600",
+    borderGlow: "group-hover:from-violet-400 group-hover:to-fuchsia-600",
+    shadow: "group-hover:shadow-[0_0_40px_-10px_rgba(139,92,246,0.4)]",
+    btnTheme: "from-violet-500 to-fuchsia-600 shadow-violet-500/25"
+  },
 ];
 
 const Certifications = () => {
@@ -50,7 +62,7 @@ const Certifications = () => {
         </div>
 
         {/* Certifications Grid */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {certifications.map((cert, idx) => (
 
             /* 1px Glowing Edge Wrapper */
