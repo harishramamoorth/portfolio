@@ -15,8 +15,8 @@ const LiquidGlassCard = ({ children, className = "", ...props }) => {
   const smoothMouseY = useSpring(mouseY, springConfig);
 
   // 3D Tilt Transformations
-  const rotateX = useTransform(smoothMouseY, [-0.5, 0.5], ["10deg", "-10deg"]);
-  const rotateY = useTransform(smoothMouseX, [-0.5, 0.5], ["-10deg", "10deg"]);
+  const rotateX = useTransform(smoothMouseY, [-0.5, 0.5], ["3deg", "-3deg"]);
+  const rotateY = useTransform(smoothMouseX, [-0.5, 0.5], ["-3deg", "3deg"]);
 
   // Mouse Spotlight Template
   const spotlightX = useSpring(useMotionValue(0), springConfig);

@@ -46,7 +46,7 @@ const About = () => {
                 
                 <div className="space-y-4 text-gray-600 dark:text-gray-400 text-lg leading-relaxed font-medium">
                   <p>
-                    I am <span className="text-gray-900 dark:text-white font-bold">Harish.R</span>, a MERN Stack Specialist and MCA Graduate. I focus on the entire lifecycle of a product—from writing secure backend logic in <span className="text-gray-900 dark:text-white font-bold">Python</span> to crafting responsive interfaces in <span className="text-gray-900 dark:text-white font-bold">React</span>.
+                    I am <span className="text-gray-900 dark:text-white font-bold">Harish R</span>, a MERN Stack Specialist and MCA Graduate. I focus on the entire lifecycle of a product—from writing secure backend logic in <span className="text-gray-900 dark:text-white font-bold">Node.js</span> to crafting responsive interfaces in <span className="text-gray-900 dark:text-white font-bold">React</span>.
                   </p>
                   <p>
                     My goal is to translate complex business challenges into scalable, cloud-native applications that are optimized for speed, security, and a global user base.

@@ -1,16 +1,17 @@
 // src/components/Skills.jsx
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Database, Server, Cpu, Terminal, Code, HardDrive, Layout } from 'lucide-react';
+import { Database, Server, Cpu, Terminal, HardDrive, Layout, Cloud, Github } from 'lucide-react';
 
 const skills = [
-  { name: "MongoDB", fullName: "MongoDB / SQL", level: 90, icon: <Database size={28} className="text-emerald-500" />, color: "from-emerald-400 to-teal-500", desc: "NoSQL & SQL databases" },
-  { name: "Express", fullName: "Node.js / Express", level: 80, icon: <Server size={28} className="text-[#a8b2d1] dark:text-gray-300" />, color: "from-green-400 to-emerald-500", desc: "API framework" },
-  { name: "React", fullName: "React.js / Next.js", level: 85, icon: <Cpu size={28} className="text-cyan-400" />, color: "from-cyan-400 to-blue-500", desc: "Frontend interfaces" },
-  { name: "Node", fullName: "Node.js / Express", level: 80, icon: <Terminal size={28} className="text-green-500" />, color: "from-green-400 to-emerald-500", desc: "Javascript runtime" },
-  { name: "Python", fullName: "Python / Django", level: 75, icon: <Code size={28} className="text-yellow-400" />, color: "from-yellow-400 to-orange-500", desc: "Backend & scripting" },
-  { name: "MySQL", fullName: "MySQL / Database", level: 80, icon: <HardDrive size={28} className="text-blue-400" />, color: "from-blue-400 to-indigo-500", desc: "Relational data" },
-  { name: "HTML/CSS", fullName: "HTML/CSS / Tailwind", level: 100, icon: <Layout size={28} className="text-pink-400" />, color: "from-pink-400 to-rose-500", desc: "Responsive styling" }
+  { name: "MongoDB", fullName: "MongoDB", level: 90, icon: <Database size={28} className="text-emerald-500" />, color: "from-emerald-400 to-teal-500", desc: "NoSQL database" },
+  { name: "Express", fullName: "Express", level: 85, icon: <Server size={28} className="text-gray-500 dark:text-gray-300" />, color: "from-gray-400 to-gray-500", desc: "API framework" },
+  { name: "React", fullName: "React", level: 90, icon: <Cpu size={28} className="text-cyan-400" />, color: "from-cyan-400 to-blue-500", desc: "Frontend interfaces" },
+  { name: "Node", fullName: "Node.js", level: 85, icon: <Terminal size={28} className="text-green-500" />, color: "from-green-400 to-emerald-500", desc: "JavaScript runtime" },
+  { name: "AWS", fullName: "Amazon Web Services", level: 80, icon: <Cloud size={28} className="text-orange-500" />, color: "from-orange-400 to-red-500", desc: "Cloud deployment" },
+  { name: "MySQL", fullName: "MySQL", level: 80, icon: <HardDrive size={28} className="text-blue-400" />, color: "from-blue-400 to-indigo-500", desc: "Relational database" },
+  { name: "HTML/CSS", fullName: "HTML / CSS", level: 95, icon: <Layout size={28} className="text-pink-400" />, color: "from-pink-400 to-rose-500", desc: "Responsive styling" },
+  { name: "Git / GitHub", fullName: "Git & GitHub", level: 90, icon: <Github size={28} className="text-gray-800 dark:text-white" />, color: "from-gray-600 to-gray-900", desc: "Version control & CI/CD" }
 ];
 
 const Skills = () => {

@@ -184,8 +184,8 @@ const Hero = ({ isLoading }) => {
               <span className="text-cyan-600 dark:text-cyan-400">MCA Graduate</span>
             </motion.div>
 
-            <motion.p variants={textItem} className="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed font-medium">
-              Architecting high-performance digital solutions with a focus on scalable web applications, clean code, and exceptional user experiences using Python and modern Javascript frameworks.
+            <motion.p variants={textItem} className="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed font-medium text-justify">
+              Architecting high-performance digital solutions with a focus on scalable web applications and real-time business tools. Specializing in the complete software development lifecycle using the MERN stack (MongoDB, Express, React, Node.js) and secure AWS cloud deployment
             </motion.p>
 
             <motion.div variants={textItem} className="flex flex-wrap items-center gap-4 mb-12 w-full sm:w-auto">

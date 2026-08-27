@@ -38,7 +38,7 @@ const Footer = () => {
             </div>
             
             <p className="text-gray-600 dark:text-gray-400 mb-6 text-base leading-relaxed max-w-sm">
-              Architecting high-performance digital solutions with a focus on scalable web applications, clean code, and exceptional user experiences.
+              Architecting high-performance digital solutions with a focus on scalable web applications and real-time business tools. Specializing in the complete software development lifecycle using the MERN stack (MongoDB, Express, React, Node.js) and secure AWS cloud deployment
             </p>
 
             {/* Live Status Indicator */}

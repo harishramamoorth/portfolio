@@ -1,9 +1,29 @@
 // src/components/Projects.jsx
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Star, FolderGit2 } from 'lucide-react';
+import { ExternalLink, Github, Star, StarHalf, FolderGit2 } from 'lucide-react';
 import LiquidGlassCard from './LiquidGlassCard';
 
 const projects = [
+  {
+    title: "Staffin",
+    company: "SaaS Platform",
+    tech: ["React.js", "Node.js", "MongoDB", "AWS"],
+    desc: "A scalable, multi-tenant SaaS platform designed to streamline attendance, payroll, and task management for 10,000+ employees. Features real-time workforce analytics, AI-driven automation, and responsive dashboards, all securely deployed on AWS.",
+    github: "https://github.com/harishramamoorth/Workemployee.git",
+    live: "https://staffin.online/",
+    stars: 5,
+    image: "/project/staffin.png",
+  },
+  {
+    title: "MRG Investor Platform",
+    company: " MRG ENGINEERING",
+    tech: ["React.js", "Node.js", "MongoDB", "AWS"],
+    desc: "A live portfolio web application automating investment purchases and profit sharing. Engineered complex backend logic to calculate yearly returns and distribute real-time ROI metrics to investors via secure RESTful APIs and responsive dashboards.",
+    github: "https://github.com/harishramamoorth/Investment-management.git",
+    live: "https://investor.mrgengg.com/investors",
+    stars: 5,
+    image: "/project/Investor.png",
+  },
   {
     title: "Binzux",
     company: "Personal Project",
@@ -11,7 +31,7 @@ const projects = [
     desc: "A modern business networking and collaboration platform that connects professionals and companies seamlessly. Built with a full-stack React.js and Node.js architecture for real-time interactions.",
     github: "https://github.com/harishramamoorth?tab=repositories",
     live: "https://biznex-alpha.vercel.app",
-    stars: 5,
+    stars: 4,
     image: "/project/binzux.jpg",
   },
   {
@@ -21,18 +41,8 @@ const projects = [
     desc: "Full-featured e‑commerce platform with product management, reviews, secure checkout, and customer support.",
     github: "https://github.com/harishramamoorth?tab=repositories",
     live: "#",
-    stars: 4,
+    stars: "In Progress",
     image: "/project/car.png",
-  },
-  {
-    title: "Investor Analysis Platform",
-    company: "MRG Engineering",
-    tech: ["Python", "MongoDB", "Express", "React"],
-    desc: "Real‑time investment tracking, interactive dashboards, and secure user authentication for enterprise clients.",
-    github: "https://github.com/harishramamoorth?tab=repositories",
-    live: "https://investor.mrgengg.com/investors",
-    stars: 5,
-    image: "/project/Investor.png",
   },
   {
     title: "FireSafety E‑commerce",
@@ -41,7 +51,7 @@ const projects = [
     desc: "Full‑featured e‑commerce platform for fire safety equipment with educational resources and equipment analysis tools.",
     github: "https://github.com/harishramamoorth?tab=repositories",
     live: "https://fire-safety-rosy.vercel.app/projects",
-    stars: 5,
+    stars: 4.5,
     image: "/project/firesafety.png",
   },
   {
@@ -51,7 +61,7 @@ const projects = [
     desc: "Real‑time truck tracking, load matching, route optimization, and transparent shipment tracking for logistics.",
     github: "https://github.com/harishramamoorth?tab=repositories",
     live: "https://logistic-delta-ecru.vercel.app",
-    stars: 5,
+    stars: 4.5,
     image: "/project/logistic.png",
   },
   {
@@ -173,16 +183,32 @@ const Projects = () => {
                     <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-[shimmer_1.5s_infinite] -translate-x-[150%] skew-x-[25deg] pointer-events-none z-10" />
 
                     <div className="absolute bottom-3 right-3 z-30 bg-black/70 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full flex items-center gap-1 shadow-lg">
-                      {[...Array(proj.stars)].map((_, i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ opacity: 0, scale: 0, rotate: -45 }}
-                          whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                          transition={{ delay: 0.5 + (i * 0.1), type: "spring" }}
-                        >
-                          <Star size={12} className="text-yellow-400 fill-yellow-400" />
-                        </motion.div>
-                      ))}
+                      {typeof proj.stars === 'number' ? (
+                        <>
+                          {[...Array(Math.floor(proj.stars))].map((_, i) => (
+                            <motion.div
+                              key={`full-${i}`}
+                              initial={{ opacity: 0, scale: 0, rotate: -45 }}
+                              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                              transition={{ delay: 0.5 + (i * 0.1), type: "spring" }}
+                            >
+                              <Star size={12} className="text-yellow-400 fill-yellow-400" />
+                            </motion.div>
+                          ))}
+                          {proj.stars % 1 !== 0 && (
+                            <motion.div
+                              key="half"
+                              initial={{ opacity: 0, scale: 0, rotate: -45 }}
+                              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                              transition={{ delay: 0.5 + (Math.floor(proj.stars) * 0.1), type: "spring" }}
+                            >
+                              <StarHalf size={12} className="text-yellow-400 fill-yellow-400" />
+                            </motion.div>
+                          )}
+                        </>
+                      ) : (
+                        <span className="text-xs font-bold text-gray-300 px-1">{proj.stars}</span>
+                      )}
                     </div>
                   </div>
                 </div>
