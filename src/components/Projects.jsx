@@ -7,7 +7,7 @@ const projects = [
   {
     title: "Staffin",
     company: "SaaS Platform",
-    tech: ["React.js", "Node.js", "MongoDB", "AWS"],
+    tech: ["React.js", "Node.js", "MongoDB", "Hostinger"],
     desc: "A scalable, multi-tenant SaaS platform designed to streamline attendance, payroll, and task management for 10,000+ employees. Features real-time workforce analytics, AI-driven automation, and responsive dashboards, all securely deployed on AWS.",
     github: "https://github.com/harishramamoorth/Workemployee.git",
     live: "https://staffin.online/",
@@ -17,7 +17,7 @@ const projects = [
   {
     title: "MRG Investor Platform",
     company: " MRG ENGINEERING",
-    tech: ["React.js", "Node.js", "MongoDB", "AWS"],
+    tech: ["React.js", "Node.js", "MongoDB", "render"],
     desc: "A live portfolio web application automating investment purchases and profit sharing. Engineered complex backend logic to calculate yearly returns and distribute real-time ROI metrics to investors via secure RESTful APIs and responsive dashboards.",
     github: "https://github.com/harishramamoorth/Investment-management.git",
     live: "https://investor.mrgengg.com/investors",
@@ -29,10 +29,45 @@ const projects = [
     company: "Personal Project",
     tech: ["React.js", "Node.js", "MongoDB", "Express"],
     desc: "A modern business networking and collaboration platform that connects professionals and companies seamlessly. Built with a full-stack React.js and Node.js architecture for real-time interactions.",
-    github: "https://github.com/harishramamoorth?tab=repositories",
+    github: "https://github.com/harishramamoorth/Biznex.1.git",
     live: "https://biznex-alpha.vercel.app",
     stars: 4,
     image: "/project/binzux.jpg",
+  },
+   {
+  title: "E-Commerce Bookstore",
+  company: "IfT",
+  tech: [
+    "React.js","Node.js","Express.js","MongoDB",
+    "JWT","Razorpay","AWS"
+  ],
+  desc:
+    "Full-stack e-commerce platform built from scratch for purchasing physical books, e-books, and audiobooks, featuring responsive UI, interactive animations, JWT authentication, cart and order management, RESTful APIs, Razorpay payment integration, and AWS deployment.",
+  github: "https://github.com/harishramamoorth/E-commerce-Bookstore.git",
+  live: "https://iftchennai.in/",
+  stars: 5,
+  image: "/project/ecommer-bookstore.jpg",
+},
+  
+  {
+    title: "FireSafety E‑commerce",
+    company: "Personal Project",
+    tech: ["React", "Node.js", "MongoDB", "Tailwind"],
+    desc: "Full‑featured e‑commerce platform for fire safety equipment with educational resources and equipment analysis tools.",
+    github: "https://github.com/harishramamoorth/fire-safety-project.git",
+    live: "https://fire-safety-rosy.vercel.app/projects",
+    stars: 4.5,
+    image: "/project/firesafety.png",
+  },
+  {
+    title: "Logistics Smart Platform",
+    company: "Personal Project",
+    tech: ["React", "Express", "PostgreSQL", "Leaflet"],
+    desc: "Real‑time truck tracking, load matching, route optimization, and transparent shipment tracking for logistics.",
+    github: "https://github.com/harishramamoorth/Logistics-Smart-Platform.git",
+    live: "https://logistic-delta-ecru.vercel.app",
+    stars: 4.5,
+    image: "/project/logistic.png",
   },
   {
     title: "Online Car Accessories Portal",
@@ -43,37 +78,9 @@ const projects = [
     live: "#",
     stars: "In Progress",
     image: "/project/car.png",
-  },
-  {
-    title: "FireSafety E‑commerce",
-    company: "Fire Safety Company",
-    tech: ["React", "Node.js", "MongoDB", "Tailwind"],
-    desc: "Full‑featured e‑commerce platform for fire safety equipment with educational resources and equipment analysis tools.",
-    github: "https://github.com/harishramamoorth?tab=repositories",
-    live: "https://fire-safety-rosy.vercel.app/projects",
-    stars: 4.5,
-    image: "/project/firesafety.png",
-  },
-  {
-    title: "MRG Logistics Smart Platform",
-    company: "MRG Logistics",
-    tech: ["React", "Express", "PostgreSQL", "Leaflet"],
-    desc: "Real‑time truck tracking, load matching, route optimization, and transparent shipment tracking for logistics.",
-    github: "https://github.com/harishramamoorth?tab=repositories",
-    live: "https://logistic-delta-ecru.vercel.app",
-    stars: 4.5,
-    image: "/project/logistic.png",
-  },
-  {
-    title: "E‑commerce Bookstore",
-    company: "Personal Project",
-    tech: ["React", "Vite", "Razorpay", "Tailwind CSS"],
-    desc: "Modern e‑commerce platform for authentic literature, featuring multilingual support, secure checkout, and scholarly‑verified publications.",
-    github: "https://github.com/harishramamoorth?tab=repositories",
-    live: "https://www.ift-mrg.shop/",
-    stars: 5,
-    image: "/project/ecommer-bookstore.jpg",
   }
+  
+  
 ];
 
 const Projects = () => {

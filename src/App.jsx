@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import CustomCursor from './components/CustomCursor';
+import CloudScrollTransition from './components/CloudScrollTransition';
 import Navbar from './components/Navbar';
 import Preloader from './components/Preloader';
 import Hero from './components/Hero';
@@ -35,6 +36,8 @@ function App() {
     // Only hide default cursor on screens supporting hover
     <div className={`bg-white dark:bg-[#020617] transition-colors duration-300 min-h-screen ${hasHover ? 'md:cursor-none' : ''}`}>
       
+      {/* <CloudScrollTransition /> */}
+
       {/* 3D Physics Trailing Cursor - only rendered on hover-capable devices */}
       {hasHover && <CustomCursor />}
 
