@@ -8,8 +8,8 @@ const experiences = [
     company: "MRG Engineering Company",
     location: "Thanjavur, India",
     period: "Aug 2025 - Sep 2026",
-    description: "Developed and deployed a full-stack web application using the MERN stack, handling both frontend and backend, and gaining hands-on experience in building end-to-end projects.",
-    highlights: ["Full-stack web apps using MERN", "Frontend & backend integration", "Database optimization & security"],
+    description: "Architected high-performance digital solutions with a focus on scalable web applications and real-time business tools. Managed the complete software development lifecycle using the MERN stack (MongoDB, Express, React, Node.js) and secure AWS cloud deployment.",
+    highlights: ["MERN Stack (MongoDB, Express, React, Node.js)", "Scalable Web Applications & Real-time Tools", "AWS Cloud Deployment & End-to-End Architecture"],
     color: "from-cyan-400 to-blue-500",
   },
   {
