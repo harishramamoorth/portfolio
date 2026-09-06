@@ -7,7 +7,7 @@ const experiences = [
     title: "MERN Stack Developer",
     company: "MRG Engineering Company",
     location: "Thanjavur, India",
-    period: "Dec 2025 - Present",
+    period: "Aug 2025 - Sep 2026",
     description: "Developed and deployed a full-stack web application using the MERN stack, handling both frontend and backend, and gaining hands-on experience in building end-to-end projects.",
     highlights: ["Full-stack web apps using MERN", "Frontend & backend integration", "Database optimization & security"],
     color: "from-cyan-400 to-blue-500",
@@ -16,7 +16,7 @@ const experiences = [
     title: "React.js Developer Intern",
     company: "SSS Smart Tech Company",
     location: "Chennai, India",
-    period: "May 2025 - Jul 2026",
+    period: "May 2025 - Jul 2025",
     description: "Working on real-time projects involving the development of web applications using React.js for Service Request Management and Recruitment & Opportunity Tracking Systems.",
     highlights: ["Real-time React.js projects", "Service Request Management", "Recruitment tracking systems"],
     color: "from-purple-400 to-pink-500",
@@ -97,7 +97,7 @@ const Experience = () => {
                               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                               <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                             </span>
-                            Current Role
+                            {exp.period.toLowerCase().includes("present") ? "Current Role" : "Latest Completed"}
                           </div>
                         </div>
                       )}
