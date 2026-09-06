@@ -192,7 +192,7 @@ const Hero = ({ isLoading }) => {
               <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#projects" onClick={scrollToProjects} className="group flex-1 sm:flex-none flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl font-bold transition-all shadow-xl shadow-cyan-500/20">
                 View Projects <Briefcase size={20} className="group-hover:rotate-12 transition-transform" />
               </motion.a>
-              <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="/Harish_Resume.pdf" download className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-[#1e2436] border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white rounded-2xl font-bold transition-all shadow-sm">
+              <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="/Harish_CV.pdf" download="Harish_CV.pdf" target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-[#1e2436] border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white rounded-2xl font-bold transition-all shadow-sm">
                 Resume <Download size={20} />
               </motion.a>
             </motion.div>
