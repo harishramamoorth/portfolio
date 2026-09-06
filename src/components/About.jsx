@@ -11,7 +11,7 @@ const About = () => {
   const stats = [
     { icon: <GraduationCap size={20} />, label: "Education", value: "MCA Graduate", color: "text-emerald-500 bg-emerald-500/10 border-emerald-500/20" },
     { icon: <Code2 size={20} />, label: "Stack", value: "Python & MERN", color: "text-orange-500 bg-orange-500/10 border-orange-500/20" },
-    { icon: <MapPin size={20} />, label: "Location", value: "Thanjavur, IN", color: "text-blue-500 bg-blue-500/10 border-blue-500/20" },
+    { icon: <MapPin size={20} />, label: "Location", value: "Dubai, UAE", color: "text-blue-500 bg-blue-500/10 border-blue-500/20" },
     { icon: <Globe size={20} />, label: "Web Ops", value: "AWS & Cloud", color: "text-cyan-500 bg-cyan-500/10 border-cyan-500/20" },
   ];
 

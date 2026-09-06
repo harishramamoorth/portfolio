@@ -185,7 +185,7 @@ const Hero = ({ isLoading }) => {
             </motion.div>
 
             <motion.p variants={textItem} className="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed font-medium text-justify">
-              Architecting high-performance digital solutions with a focus on scalable web applications and real-time business tools. Specializing in the complete software development lifecycle using the MERN stack (MongoDB, Express, React, Node.js) and secure AWS cloud deployment
+              Developed and deployed a full-stack web application using the MERN stack, handling both frontend and backend, and gaining hands-on experience in building end-to-end projects.
             </motion.p>
 
             <motion.div variants={textItem} className="flex flex-wrap items-center gap-4 mb-12 w-full sm:w-auto">
@@ -203,7 +203,7 @@ const Hero = ({ isLoading }) => {
                 <a href="https://www.linkedin.com/in/harishramamoorthy/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:text-blue-500 rounded-xl transition-all hover:-translate-y-1"><Linkedin size={22} /></a>
               </div>
               <div className="flex items-center gap-6 text-sm font-bold tracking-wide">
-                <span className="flex items-center gap-2 text-gray-600 dark:text-gray-400"><MapPin size={18} className="text-cyan-500" /> Trichy, IN</span>
+                <span className="flex items-center gap-2 text-gray-600 dark:text-gray-400"><MapPin size={18} className="text-cyan-500" /> Dubai, UAE</span>
                 <span className="flex items-center gap-2 text-gray-600 dark:text-gray-400"><Phone size={18} className="text-cyan-500" /> +91 9344508260</span>
               </div>
             </motion.div>

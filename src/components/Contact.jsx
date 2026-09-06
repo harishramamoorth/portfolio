@@ -46,7 +46,7 @@ const contactMethods = [
     id: "location",
     icon: <MapPin size={22} />, 
     title: "Location", 
-    value: "Thanjavur, India", 
+    value: "Dubai, UAE", 
     href: null,
     copyValue: null, 
     theme: "from-orange-400 to-amber-500",
