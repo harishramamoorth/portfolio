@@ -8,8 +8,8 @@ const experiences = [
     company: "MRG Engineering Company",
     location: "Thanjavur, India",
     period: "Aug 2025 - Sep 2026",
-    description: "Architected high-performance digital solutions with a focus on scalable web applications and real-time business tools. Managed the complete software development lifecycle using the MERN stack (MongoDB, Express, React, Node.js) and secure AWS cloud deployment.",
-    highlights: ["MERN Stack (MongoDB, Express, React, Node.js)", "Scalable Web Applications & Real-time Tools", "AWS Cloud Deployment & End-to-End Architecture"],
+    description: "Developed and deployed a full-stack web application using the MERN stack, handling both frontend and backend, and gaining hands-on experience in building end-to-end projects.",
+    highlights: ["Full-stack web apps using MERN", "Frontend & backend integration", "Database optimization & security"],
     color: "from-cyan-400 to-blue-500",
   },
   {
@@ -35,9 +35,9 @@ const experiences = [
 const Experience = () => {
   return (
     <section id="experience" className="py-24 bg-gray-50 dark:bg-[#050810] relative overflow-hidden">
-      
+
       <div className="container-custom relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,16 +51,16 @@ const Experience = () => {
         </motion.div>
 
         <div className="max-w-4xl mx-auto relative">
-          
+
           {/* Animated Central Timeline Line */}
           <div className="absolute left-[21px] md:left-[27px] top-6 bottom-6 w-1 bg-gray-200 dark:bg-white/5 rounded-full overflow-hidden">
-             <motion.div 
-               initial={{ height: 0 }}
-               whileInView={{ height: "100%" }}
-               transition={{ duration: 1.5, ease: "easeInOut" }}
-               viewport={{ once: true, margin: "-100px" }}
-               className="w-full bg-gradient-to-b from-cyan-500 via-purple-500 to-orange-500 shadow-[0_0_15px_rgba(6,182,212,0.8)]"
-             />
+            <motion.div
+              initial={{ height: 0 }}
+              whileInView={{ height: "100%" }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="w-full bg-gradient-to-b from-cyan-500 via-purple-500 to-orange-500 shadow-[0_0_15px_rgba(6,182,212,0.8)]"
+            />
           </div>
 
           <div className="space-y-12 md:space-y-16">
@@ -68,7 +68,7 @@ const Experience = () => {
               const isActive = idx === 0;
 
               return (
-                <motion.div 
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, x: idx % 2 === 0 ? 50 : -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -89,7 +89,7 @@ const Experience = () => {
                   {/* Glass Card Container */}
                   <div className={`relative rounded-2xl p-[1px] bg-gradient-to-br from-gray-200 dark:from-white/10 dark:to-white/5 transition-transform duration-300 hover:translate-x-2`}>
                     <div className="relative p-6 md:p-8 rounded-[15px] bg-white dark:bg-[#0a0f1c] h-full overflow-hidden shadow-xl">
-                      
+
                       {isActive && (
                         <div className="absolute top-0 right-0">
                           <div className="bg-gradient-to-bl from-cyan-500 to-blue-600 text-white text-[10px] md:text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-bl-2xl shadow-md flex items-center gap-1.5">
@@ -97,7 +97,7 @@ const Experience = () => {
                               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                               <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                             </span>
-                            {exp.period.toLowerCase().includes("present") ? "Current Role" : "Latest Completed"}
+                            Current Role
                           </div>
                         </div>
                       )}
@@ -114,7 +114,7 @@ const Experience = () => {
                             <Calendar size={14} /> {exp.period}
                           </span>
                         </div>
-                        
+
                         <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed mb-6">{exp.description}</p>
 
                         <div className={`rounded-xl p-5 border ${isActive ? 'bg-cyan-50/50 dark:bg-cyan-900/10 border-cyan-100 dark:border-cyan-900/30' : 'bg-gray-50 dark:bg-white/5 border-gray-100 dark:border-white/5'}`}>
