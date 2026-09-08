@@ -34,7 +34,7 @@ function App() {
 
   return (
     // Only hide default cursor on screens supporting hover
-    <div className={`bg-white dark:bg-[#020617] transition-colors duration-300 min-h-screen ${hasHover ? 'md:cursor-none' : ''}`}>
+    <div className={`bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen ${hasHover ? 'md:cursor-none' : ''}`}>
       
       {/* <CloudScrollTransition /> */}
 
@@ -57,7 +57,7 @@ function App() {
         style={{ pointerEvents: isLoading ? "none" : "auto" }}
       >
         <Navbar />
-        <main>
+        <main className="pb-16 md:pb-0">
           <Hero isLoading={isLoading} />
           <About />
           <Skills />

@@ -71,7 +71,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gray-50 dark:bg-[#020617] relative overflow-hidden transition-colors duration-300">
+    <section id="contact" className="py-24 bg-transparent relative overflow-hidden transition-colors duration-300">
       
       {/* Deep Space Background Pattern & Orbs */}
       <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] bg-[radial-gradient(#888_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
@@ -81,23 +81,23 @@ const Contact = () => {
       <div className="container-custom relative z-10">
         
         {/* Premium Header */}
-        <div className="text-center mb-20 animate-fade-up">
-          <div className="inline-flex items-center px-5 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+        <div className="text-center mb-12 sm:mb-20 animate-fade-up">
+          <div className="inline-flex items-center px-4 sm:px-5 py-1.5 sm:py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-4 sm:mb-6 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
             Get In Touch
           </div>
-          <h2 className="text-5xl md:text-6xl font-black text-gray-900 dark:text-white tracking-tighter mb-6">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-black text-gray-900 dark:text-white tracking-tighter mb-4 sm:mb-6">
             Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">Connect</span>
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full mx-auto mb-6"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg md:text-xl font-medium">
+          <div className="w-20 sm:w-24 h-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base sm:text-lg md:text-xl font-medium px-2">
             Have a project in mind or looking for a developer? Let's discuss how I can help bring your ideas to life.
           </p>
         </div>
         
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-10 items-stretch">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-6 sm:gap-10 items-stretch">
           
           {/* Left Column: Contact Methods Grid */}
-          <div className="lg:col-span-3 grid sm:grid-cols-2 gap-5">
+          <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {contactMethods.map((item) => (
               <div 
                 key={item.id}
@@ -118,35 +118,35 @@ const Contact = () => {
                 )}
 
                 {/* Inner Card */}
-                <div className="relative z-0 h-full flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-[#080d1a] overflow-hidden">
+                <div className="relative z-0 h-full flex items-center gap-3.5 p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#080d1a] overflow-hidden">
                   
                   {/* Hover Glare */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent dark:from-white/5 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500 rounded-2xl"></div>
 
                   {/* Icon Box */}
-                  <div className={`relative z-0 p-3 rounded-xl bg-gradient-to-br ${item.theme} text-white shadow-md transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}>
+                  <div className={`relative z-0 p-2.5 sm:p-3 rounded-xl bg-gradient-to-br ${item.theme} text-white shadow-md transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shrink-0`}>
                     {item.icon}
                   </div>
 
                   {/* Text Details */}
                   <div className="flex-1 min-w-0 relative z-0">
-                    <h3 className="font-bold text-xs text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-1">
+                    <h3 className="font-bold text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-0.5 sm:mb-1">
                       {item.title}
                     </h3>
-                    <p className="font-semibold text-gray-900 dark:text-white truncate transition-colors group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-gray-900 group-hover:to-gray-500 dark:group-hover:from-white dark:group-hover:to-gray-300">
+                    <p className="font-semibold text-xs sm:text-sm md:text-base text-gray-900 dark:text-white truncate transition-colors group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-gray-900 group-hover:to-gray-500 dark:group-hover:from-white dark:group-hover:to-gray-300">
                       {item.value}
                     </p>
                   </div>
 
                   {/* Action Icons (Right side) */}
-                  <div className="flex items-center gap-1 relative z-20">
+                  <div className="flex items-center gap-1 relative z-20 shrink-0">
                     
                     {/* Copy Button (Only renders if copyValue exists) */}
                     {item.copyValue && (
                       <button 
                         onClick={(e) => handleCopy(e, item.copyValue, item.id)}
                         title="Copy to clipboard"
-                        className="p-2 rounded-lg text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                        className="p-1.5 sm:p-2 rounded-lg text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 cursor-pointer"
                       >
                         {copiedId === item.id ? (
                           <Check size={18} className="text-emerald-500 animate-[scale-in_0.2s_ease-out]" />
@@ -158,7 +158,7 @@ const Contact = () => {
 
                     {/* Navigation Arrow */}
                     {item.href && (
-                      <div className="p-2 text-gray-300 dark:text-gray-600 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300 pointer-events-none">
+                      <div className="p-1.5 sm:p-2 text-gray-300 dark:text-gray-600 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300 pointer-events-none">
                         <ArrowUpRight size={18} className="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                       </div>
                     )}
@@ -170,9 +170,9 @@ const Contact = () => {
           </div>
           
           {/* Right Column: CTA Card */}
-          <div className="lg:col-span-2 relative p-[1px] rounded-[2rem] bg-gradient-to-b from-cyan-400 to-purple-600 shadow-[0_0_40px_-10px_rgba(6,182,212,0.3)] transition-transform duration-700 hover:-translate-y-2">
+          <div className="lg:col-span-2 relative p-[1px] rounded-2xl sm:rounded-[2rem] bg-gradient-to-b from-cyan-400 to-purple-600 shadow-[0_0_40px_-10px_rgba(6,182,212,0.3)] transition-transform duration-700 hover:-translate-y-2">
             
-            <div className="relative h-full p-8 md:p-10 flex flex-col items-center justify-center text-center rounded-[2rem] bg-white dark:bg-[#080d1a] overflow-hidden">
+            <div className="relative h-full p-5 sm:p-8 md:p-10 flex flex-col items-center justify-center text-center rounded-2xl sm:rounded-[2rem] bg-white dark:bg-[#080d1a] overflow-hidden">
               
               {/* Internal ambient glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 pointer-events-none"></div>
@@ -180,20 +180,20 @@ const Contact = () => {
               <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 blur-3xl rounded-full pointer-events-none"></div>
 
               {/* Status Indicator */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 mb-8 relative z-10">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 mb-6 sm:mb-8 relative z-10">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest">Available for Work</span>
+                <span className="text-[10px] sm:text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest">Available for Work</span>
               </div>
 
-              <div className="relative p-4 rounded-full bg-gray-50 dark:bg-[#151f38] mb-6 z-10 border border-gray-100 dark:border-white/5 shadow-inner">
-                <Globe className="w-12 h-12 text-cyan-500" />
+              <div className="relative p-3.5 sm:p-4 rounded-full bg-gray-50 dark:bg-[#151f38] mb-4 sm:mb-6 z-10 border border-gray-100 dark:border-white/5 shadow-inner">
+                <Globe className="w-9 h-9 sm:w-12 sm:h-12 text-cyan-500" />
               </div>
               
-              <h3 className="text-3xl font-black text-gray-900 dark:text-white mb-4 z-10">Let's Work Together</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-8 z-10 text-lg leading-relaxed">
+              <h3 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white mb-3 sm:mb-4 z-10 break-words max-w-full">Let's Work Together</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 z-10 text-base sm:text-lg leading-relaxed">
                 Whether you have a question, a project proposal, or just want to say hi, my inbox is always open.
               </p>
               
@@ -201,12 +201,12 @@ const Contact = () => {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=harishramu9344@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/btn w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-lg shadow-lg shadow-cyan-500/25 transition-all hover:shadow-cyan-500/40 hover:-translate-y-1 relative overflow-hidden z-10"
+                className="group/btn w-full flex items-center justify-center gap-2.5 sm:gap-3 py-3.5 sm:py-4 px-5 sm:px-6 rounded-xl sm:rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-base sm:text-lg shadow-lg shadow-cyan-500/25 transition-all hover:shadow-cyan-500/40 hover:-translate-y-1 relative overflow-hidden z-10"
               >
                 {/* Shimmer Light Ray */}
                 <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[25deg] group-hover/btn:animate-[shimmer_1.5s_infinite] transition-all z-0"></div>
                 
-                <Send size={20} className="relative z-10 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" /> 
+                <Send size={18} className="relative z-10 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" /> 
                 <span className="relative z-10 tracking-wide">Send an Email</span>
               </a>
             </div>
@@ -215,15 +215,15 @@ const Contact = () => {
       </div>
       
       {/* Sticky Mobile CTA */}
-      <div className="fixed bottom-6 left-4 right-4 z-50 md:hidden animate-fade-up" style={{ animationDelay: '1s' }}>
+      <div className="fixed bottom-4 left-4 right-4 z-40 md:hidden animate-fade-up">
         <a 
           href="https://mail.google.com/mail/?view=cm&fs=1&to=harishramu9344@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="group/mobile flex items-center justify-center w-full gap-3 py-4 rounded-2xl shadow-[0_10px_40px_rgba(6,182,212,0.4)] bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold backdrop-blur-md transition-all hover:scale-[1.02] overflow-hidden relative border border-white/20"
+          className="group/mobile flex items-center justify-center w-full gap-2.5 py-3 rounded-xl shadow-[0_8px_25px_rgba(6,182,212,0.4)] bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-sm backdrop-blur-md transition-all hover:scale-[1.02] overflow-hidden relative border border-white/20"
         >
           <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[25deg] animate-[shimmer_2s_infinite] transition-all z-0"></div>
-          <Send size={20} className="relative z-10" /> 
+          <Send size={18} className="relative z-10" /> 
           <span className="relative z-10">Let's Connect</span>
         </a>
       </div>

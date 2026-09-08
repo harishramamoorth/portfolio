@@ -79,11 +79,11 @@ const Navbar = () => {
   // Circular reveal animation for mobile menu
   const menuVariants = {
     closed: {
-      clipPath: "circle(0% at calc(100% - 3rem) 3rem)",
+      clipPath: "circle(0% at calc(100% - 2.5rem) 2rem)",
       transition: { type: "spring", stiffness: 400, damping: 40 }
     },
     open: {
-      clipPath: "circle(150% at calc(100% - 3rem) 3rem)",
+      clipPath: "circle(150% at calc(100% - 2.5rem) 2rem)",
       transition: { type: "spring", stiffness: 20, restDelta: 2 }
     }
   };
@@ -94,11 +94,11 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
-        className={`fixed left-0 right-0 z-[100] transition-all duration-500 ease-out flex justify-center ${scrolled ? 'top-4 px-4' : 'top-0 px-0'
+        className={`fixed left-0 right-0 z-[100] transition-all duration-500 ease-out flex justify-center ${scrolled ? 'top-3 sm:top-4 px-3 sm:px-4' : 'top-0 px-0'
           }`}
       >
         {/* The Floating Dock */}
-        <div className={`relative flex items-center justify-between w-full max-w-6xl transition-all duration-500 bg-white/70 dark:bg-[#020617]/70 backdrop-blur-2xl border border-gray-200 dark:border-white/10 shadow-2xl ${scrolled ? 'rounded-[2rem] py-2 px-4 sm:px-6' : 'rounded-none py-4 px-5 sm:px-8 border-t-0 border-x-0'
+        <div className={`relative flex items-center justify-between w-full max-w-6xl transition-all duration-500 bg-white/80 dark:bg-[#020617]/80 backdrop-blur-2xl border border-gray-200 dark:border-white/10 shadow-2xl ${scrolled ? 'rounded-2xl sm:rounded-[2rem] py-2 px-3.5 sm:px-6' : 'rounded-none py-3.5 sm:py-4 px-4 sm:px-8 border-t-0 border-x-0'
           }`}>
 
           {/* Animated Reading Progress Bar (Attached to bottom of dock) */}
@@ -111,7 +111,7 @@ const Navbar = () => {
           <a
             href="#home"
             onClick={(e) => handleClick(e, '#home')}
-            className="relative z-10 text-xl md:text-2xl font-black tracking-tighter text-gray-900 dark:text-white group flex-shrink-0"
+            className="relative z-10 text-lg sm:text-xl md:text-2xl font-black tracking-tighter text-gray-900 dark:text-white group flex-shrink-0"
           >
             <span className="inline-block transition-transform group-hover:-translate-y-0.5">Harish</span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 group-hover:from-purple-400 group-hover:to-pink-500 transition-colors duration-500">.R</span>
@@ -143,12 +143,12 @@ const Navbar = () => {
           </div>
 
           {/* Action Controls */}
-          <div className="flex items-center gap-3 flex-shrink-0 relative z-10">
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0 relative z-10">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setDarkMode(!darkMode)}
-              className="relative p-2.5 rounded-full bg-gray-100 dark:bg-white/5 text-gray-800 dark:text-gray-300 border border-gray-200 dark:border-white/10 hover:border-cyan-500/50 transition-colors duration-300 overflow-hidden"
+              className="relative p-2 sm:p-2.5 rounded-full bg-gray-100 dark:bg-white/5 text-gray-800 dark:text-gray-300 border border-gray-200 dark:border-white/10 hover:border-cyan-500/50 transition-colors duration-300 overflow-hidden"
             >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
@@ -168,7 +168,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden relative p-2.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-lg z-[110]"
+              className="lg:hidden relative p-2 sm:p-2.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-lg z-[110]"
             >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
@@ -178,7 +178,7 @@ const Navbar = () => {
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  {isOpen ? <X size={20} /> : <Menu size={20} />}
+                  {isOpen ? <X size={18} /> : <Menu size={18} />}
                 </motion.div>
               </AnimatePresence>
             </motion.button>
@@ -193,17 +193,17 @@ const Navbar = () => {
         animate={isOpen ? "open" : "closed"}
         className="fixed inset-0 z-[90] lg:hidden bg-white/95 dark:bg-[#020617]/95 backdrop-blur-xl"
       >
-        <div className="h-full flex flex-col justify-center px-8 pt-20 pb-12 overflow-y-auto">
+        <div className="h-full flex flex-col justify-center px-6 sm:px-8 pt-20 pb-12 overflow-y-auto">
           <motion.h4
             initial={{ opacity: 0, y: 20 }}
             animate={isOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1 }}
-            className="text-[10px] font-black text-cyan-500 uppercase tracking-[0.3em] mb-8 border-b border-gray-200 dark:border-white/10 pb-4"
+            className="text-[10px] font-black text-cyan-500 uppercase tracking-[0.3em] mb-4 sm:mb-8 border-b border-gray-200 dark:border-white/10 pb-3 sm:pb-4"
           >
             Navigation
           </motion.h4>
 
-          <div className="flex flex-col gap-4 flex-grow justify-center">
+          <div className="flex flex-col gap-2 sm:gap-4 flex-grow justify-center">
             {navLinks.map((link, i) => (
               <motion.a
                 initial={{ opacity: 0, x: -20 }}
@@ -212,13 +212,13 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
-                className={`group flex items-center justify-between p-4 rounded-2xl text-2xl md:text-3xl font-black transition-all ${activeSection === link.id
+                className={`group flex items-center justify-between p-3 sm:p-4 rounded-xl sm:rounded-2xl text-xl sm:text-2xl md:text-3xl font-black transition-all ${activeSection === link.id
                     ? 'bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600 border border-cyan-500/20 shadow-inner'
                     : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
                   }`}
               >
                 {link.name}
-                <ChevronRight size={24} className={`transition-all duration-300 ${activeSection === link.id ? 'text-cyan-500 translate-x-0' : 'opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0'}`} />
+                <ChevronRight size={20} className={`transition-all duration-300 ${activeSection === link.id ? 'text-cyan-500 translate-x-0' : 'opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0'}`} />
               </motion.a>
             ))}
           </div>

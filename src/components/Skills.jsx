@@ -41,7 +41,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-24 bg-gray-50 dark:bg-[#050810] relative overflow-hidden transition-colors duration-300">
+    <section id="skills" className="py-24 bg-transparent relative overflow-hidden transition-colors duration-300">
 
       {/* Background Decor */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-900/5 dark:bg-blue-900/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
@@ -53,12 +53,12 @@ const Skills = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-wider uppercase mb-6 shadow-[0_0_20px_rgba(59,130,246,0.15)]">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-4 sm:mb-6 shadow-[0_0_20px_rgba(59,130,246,0.15)]">
             My Expertise
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight mb-4">
             Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600 dark:from-cyan-400 dark:to-blue-500">Skills</span>
           </h2>
           <div className="w-20 h-1.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full mx-auto"></div>
@@ -70,7 +70,7 @@ const Skills = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          className="max-w-5xl mx-auto grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6"
         >
           {skills.map((skill, idx) => {
             const isHovered = hoveredIdx === idx;
@@ -81,12 +81,12 @@ const Skills = () => {
                 onMouseEnter={() => setHoveredIdx(idx)}
                 onMouseLeave={() => setHoveredIdx(null)}
                 whileHover={{
-                  scale: 1.05,
+                  scale: 1.04,
                   borderColor: "rgba(6, 182, 212, 0.6)",
                   boxShadow: "0px 15px 30px rgba(6, 182, 212, 0.15)"
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="interactive-card group relative p-6 rounded-2xl bg-white/40 dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 backdrop-blur-md shadow-lg cursor-pointer flex flex-col justify-center h-44 overflow-hidden"
+                className="interactive-card group relative p-4 sm:p-6 rounded-2xl bg-white/40 dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 backdrop-blur-md shadow-lg cursor-pointer flex flex-col justify-center h-36 sm:h-44 overflow-hidden"
               >
                 {/* Subtle ambient glow behind the card on hover */}
                 <div className={`absolute inset-0 rounded-2xl transition-opacity duration-300 blur-xl bg-gradient-to-r ${skill.color} pointer-events-none ${isHovered ? 'opacity-10' : 'opacity-0'}`}></div>
@@ -97,39 +97,39 @@ const Skills = () => {
                   <motion.div
                     animate={{ y: [0, -4, 0] }}
                     transition={{ duration: 4, repeat: Infinity, delay: idx * 0.2, ease: "easeInOut" }}
-                    className="p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-900/40 mb-3 border border-gray-200/50 dark:border-white/5 shadow-inner"
+                    className="p-2.5 sm:p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-900/40 mb-2 sm:mb-3 border border-gray-200/50 dark:border-white/5 shadow-inner"
                   >
                     {skill.icon}
                   </motion.div>
 
-                  <h3 className="font-bold text-lg text-gray-800 dark:text-white tracking-tight">
+                  <h3 className="font-bold text-base sm:text-lg text-gray-800 dark:text-white tracking-tight truncate w-full">
                     {skill.name}
                   </h3>
 
-                  <span className="text-xs text-gray-500 dark:text-gray-400 mt-1 font-medium">
+                  <span className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 mt-0.5 sm:mt-1 font-medium truncate w-full">
                     {skill.desc}
                   </span>
                 </div>
 
                 {/* Hover State: Fades/slides in on hover */}
-                <div className={`absolute inset-6 flex flex-col justify-between z-10 text-left transition-all duration-300 ease-out transform ${isHovered ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-3 pointer-events-none'}`}>
+                <div className={`absolute inset-4 sm:inset-6 flex flex-col justify-between z-10 text-left transition-all duration-300 ease-out transform ${isHovered ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-3 pointer-events-none'}`}>
                   <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-black text-xs text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">
+                    <div className="flex items-center justify-between mb-1 sm:mb-2">
+                      <h4 className="font-black text-[10px] sm:text-xs text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">
                         Expertise
                       </h4>
-                      <span className="text-2xl font-black text-gray-900 dark:text-white">
+                      <span className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">
                         {skill.level}%
                       </span>
                     </div>
-                    <h3 className="font-bold text-base text-gray-800 dark:text-white leading-tight">
+                    <h3 className="font-bold text-sm sm:text-base text-gray-800 dark:text-white leading-tight truncate">
                       {skill.fullName}
                     </h3>
                   </div>
 
                   {/* Progress Bar Container */}
-                  <div className="w-full mt-4">
-                    <div className="w-full bg-gray-100 dark:bg-[#0f1629] rounded-full h-3 border border-gray-200 dark:border-white/5 overflow-hidden shadow-inner relative">
+                  <div className="w-full mt-2 sm:mt-4">
+                    <div className="w-full bg-gray-100 dark:bg-[#0f1629] rounded-full h-2.5 sm:h-3 border border-gray-200 dark:border-white/5 overflow-hidden shadow-inner relative">
                       <div
                         className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 shadow-[0_0_10px_rgba(6,182,212,0.6)] transition-[width] duration-700 ease-out"
                         style={{ width: isHovered ? `${skill.level}%` : '0%' }}

@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "node ./node_modules/vite/bin/vite.js build",
     "preview": "vite preview",
-    "prebuild": "chmod +x node_modules/.bin/vite || true"
+    "prebuild": "node -e \"console.log('Building...');\""
   },
   "dependencies": {
     "framer-motion": "^12.40.0",

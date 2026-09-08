@@ -145,7 +145,7 @@ const Hero = ({ isLoading }) => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gray-50 dark:bg-[#070b14] overflow-hidden pt-20 pb-12 lg:py-0 transition-colors duration-300">
+    <section id="home" className="relative min-h-screen flex items-center bg-transparent overflow-hidden pt-20 pb-12 lg:py-0 transition-colors duration-300">
 
       {/* Dynamic Parallax Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -171,40 +171,40 @@ const Hero = ({ isLoading }) => {
               Available for Full-Time Roles
             </motion.div>
 
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black leading-[1] mb-6 text-gray-900 dark:text-white tracking-tighter" style={{ perspective: "1000px" }}>
+            <h1 className="text-4xl sm:text-7xl lg:text-8xl font-black leading-[1.1] sm:leading-[1] mb-4 sm:mb-6 text-gray-900 dark:text-white tracking-tighter" style={{ perspective: "1000px" }}>
               <motion.div variants={textItem}>Hi, I'm</motion.div>
               <motion.div variants={textItem} className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-500 dark:from-cyan-400 dark:to-blue-500">
                 Harish.R
               </motion.div>
             </h1>
 
-            <motion.div variants={textItem} className="flex items-center flex-wrap gap-3 text-xl md:text-2xl mb-6 font-bold tracking-tight">
+            <motion.div variants={textItem} className="flex items-center flex-wrap gap-2 sm:gap-3 text-lg sm:text-2xl mb-4 sm:mb-6 font-bold tracking-tight">
               <span className="text-gray-800 dark:text-gray-200">MERN Stack Developer</span>
               <span className="text-gray-400 dark:text-gray-600 hidden sm:inline">|</span>
               <span className="text-cyan-600 dark:text-cyan-400">MCA Graduate</span>
             </motion.div>
 
-            <motion.p variants={textItem} className="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed font-medium text-justify">
+            <motion.p variants={textItem} className="text-gray-600 dark:text-gray-400 text-base sm:text-lg md:text-xl max-w-xl mb-8 sm:mb-10 leading-relaxed font-medium text-left">
               Developed and deployed a full-stack web application using the MERN stack, handling both frontend and backend, and gaining hands-on experience in building end-to-end projects.
             </motion.p>
 
-            <motion.div variants={textItem} className="flex flex-wrap items-center gap-4 mb-12 w-full sm:w-auto">
-              <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#projects" onClick={scrollToProjects} className="group flex-1 sm:flex-none flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl font-bold transition-all shadow-xl shadow-cyan-500/20">
+            <motion.div variants={textItem} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-12 w-full sm:w-auto">
+              <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#projects" onClick={scrollToProjects} className="group flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl font-bold transition-all shadow-xl shadow-cyan-500/20 text-base">
                 View Projects <Briefcase size={20} className="group-hover:rotate-12 transition-transform" />
               </motion.a>
-              <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="/Scroll%20effect/Harish.R-UAE.pdf" download="Harish.R-UAE.pdf" target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-[#1e2436] border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white rounded-2xl font-bold transition-all shadow-sm">
+              <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="/Scroll%20effect/Harish.R-UAE.pdf" download="Harish.R-UAE.pdf" target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-white dark:bg-[#1e2436] border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white rounded-2xl font-bold transition-all shadow-sm text-base">
                 Resume <Download size={20} />
               </motion.a>
             </motion.div>
 
-            <motion.div variants={textItem} className="flex flex-col sm:flex-row sm:items-center gap-8 w-full pt-8 border-t border-gray-200 dark:border-white/5">
-              <div className="flex items-center gap-4">
-                <a href="https://github.com/harishramamoorth?tab=repositories" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:text-cyan-500 rounded-xl transition-all hover:-translate-y-1"><Github size={22} /></a>
-                <a href="https://www.linkedin.com/in/harishramamoorthy/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:text-blue-500 rounded-xl transition-all hover:-translate-y-1"><Linkedin size={22} /></a>
+            <motion.div variants={textItem} className="flex flex-wrap items-center justify-between sm:justify-start gap-4 sm:gap-8 w-full pt-6 sm:pt-8 border-t border-gray-200 dark:border-white/5">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <a href="https://github.com/harishramamoorth?tab=repositories" target="_blank" rel="noopener noreferrer" className="p-2.5 sm:p-3 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:text-cyan-500 rounded-xl transition-all hover:-translate-y-1"><Github size={20} /></a>
+                <a href="https://www.linkedin.com/in/harishramamoorthy/" target="_blank" rel="noopener noreferrer" className="p-2.5 sm:p-3 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:text-blue-500 rounded-xl transition-all hover:-translate-y-1"><Linkedin size={20} /></a>
               </div>
-              <div className="flex items-center gap-6 text-sm font-bold tracking-wide">
-                <span className="flex items-center gap-2 text-gray-600 dark:text-gray-400"><MapPin size={18} className="text-cyan-500" /> Dubai, UAE</span>
-                <span className="flex items-center gap-2 text-gray-600 dark:text-gray-400"><Phone size={18} className="text-cyan-500" /> +91 9344508260</span>
+              <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs sm:text-sm font-bold tracking-wide">
+                <span className="flex items-center gap-1.5 text-gray-600 dark:text-gray-400"><MapPin size={16} className="text-cyan-500" /> Dubai, UAE</span>
+                <span className="flex items-center gap-1.5 text-gray-600 dark:text-gray-400"><Phone size={16} className="text-cyan-500" /> +91 9344508260</span>
               </div>
             </motion.div>
           </motion.div>
@@ -214,17 +214,17 @@ const Hero = ({ isLoading }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-            className="flex justify-center relative perspective-[1000px] order-1 lg:order-2 w-full mb-8 lg:mb-0"
+            className="flex justify-center relative perspective-[1000px] order-1 lg:order-2 w-full mb-6 lg:mb-0"
           >
             {/* Ambient Glow Backing */}
-            <div className="absolute w-80 h-80 sm:w-[32rem] sm:h-[32rem] bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full blur-[90px] opacity-20 dark:opacity-30 animate-pulse pointer-events-none" />
+            <div className="absolute w-64 h-64 sm:w-[32rem] sm:h-[32rem] bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full blur-[70px] sm:blur-[90px] opacity-20 dark:opacity-30 animate-pulse pointer-events-none" />
 
             {/* 3D Tilt Container */}
             <motion.div
               onMouseMove={handleMouseMovePortrait}
               onMouseLeave={handleMouseLeavePortrait}
               style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-              className="interactive-card relative w-96 h-96 sm:w-[32rem] sm:h-[32rem] lg:w-[36rem] lg:h-[36rem] cursor-crosshair z-10 flex items-center justify-center rounded-[2rem]"
+              className="interactive-card relative w-[280px] h-[280px] xs:w-80 xs:h-80 sm:w-[32rem] sm:h-[32rem] lg:w-[36rem] lg:h-[36rem] cursor-crosshair z-10 flex items-center justify-center rounded-[2rem]"
             >
               {/* The Video with a continuous floating breathing effect */}
               <motion.video

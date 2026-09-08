@@ -15,7 +15,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-white dark:bg-[#020617] pt-20 pb-8 overflow-hidden transition-colors duration-300">
+    <footer className="relative bg-transparent pt-20 pb-8 overflow-hidden transition-colors duration-300">
       
       {/* 1px Glowing Top Border Edge */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-300 dark:via-white/10 to-transparent"></div>
