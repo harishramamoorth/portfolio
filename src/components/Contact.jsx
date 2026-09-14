@@ -36,9 +36,9 @@ const contactMethods = [
     id: "phone",
     icon: <Phone size={22} />, 
     title: "Phone", 
-    value: "+91 9344508260", 
-    href: "tel:+919344508260", // This native tel link triggers the phone dialer
-    copyValue: "+919344508260",
+    value: "+971 58 217 7359", 
+    href: "tel:+971582177359", // This native tel link triggers the phone dialer
+    copyValue: "+971582177359",
     theme: "from-emerald-400 to-teal-500",
     glow: "group-hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.4)]"
   },

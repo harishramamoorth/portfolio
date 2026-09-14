@@ -27,6 +27,18 @@ const certifications = [
     btnTheme: "from-orange-500 to-red-600 shadow-orange-500/25"
   },
   {
+    name: "Python Foundation",
+    type: "Certified Credential",
+    place: "Infosys Springboard",
+    description: "Foundational certification covering Python syntax, data structures, algorithm logic, and object-oriented programming.",
+    file: "#",
+    icon: <Award size={18} />,
+    theme: "from-emerald-400 via-teal-500 to-cyan-600",
+    borderGlow: "group-hover:from-emerald-400 group-hover:to-teal-600",
+    shadow: "group-hover:shadow-[0_0_40px_-10px_rgba(16,185,129,0.4)]",
+    btnTheme: "from-emerald-500 to-teal-600 shadow-emerald-500/25"
+  },
+  {
     name: "Internship Certificate",
     type: "PDF Document",
     place: "SSS Smart Tech",

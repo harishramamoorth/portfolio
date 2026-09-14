@@ -42,7 +42,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-28 bg-transparent relative overflow-hidden transition-colors duration-300">
+    <section id="about" className="min-h-screen flex flex-col justify-center py-20 lg:py-28 bg-transparent relative overflow-hidden transition-colors duration-300">
       
       {/* Dynamic Ambient Cloud Background & Mesh Grids */}
       <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] bg-[grid-white_1px] [background-size:30px_30px] pointer-events-none"></div>
@@ -85,7 +85,7 @@ const About = () => {
         </motion.div>
       </div>
 
-      <div className="container-custom relative z-10">
+      <div className="container-custom relative z-10 w-full">
         
         {/* Animated Section Header */}
         <motion.div 
@@ -113,18 +113,21 @@ const About = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6"
+          className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8"
         >
           
           {/* Main Story Card */}
           <motion.div 
             variants={cardVariants}
-            whileHover={{ y: -6 }}
+            whileHover={{ y: -8, scale: 1.01 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="lg:col-span-8 group relative p-[1px] rounded-2xl sm:rounded-[2.5rem] bg-gradient-to-b from-gray-200 via-cyan-500/20 to-transparent dark:from-white/15 dark:via-cyan-500/20 dark:to-transparent transition-all duration-500 shadow-xl hover:shadow-cyan-500/10"
+            className="lg:col-span-8 group relative p-[1px] rounded-2xl sm:rounded-[2.5rem] bg-gradient-to-b from-gray-200 via-cyan-500/30 to-transparent dark:from-white/20 dark:via-cyan-500/30 dark:to-transparent transition-all duration-500 shadow-xl hover:shadow-cyan-500/20 overflow-hidden"
           >
-            <div className="relative h-full bg-white dark:bg-[#080d1a] rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 md:p-12 overflow-hidden border border-transparent dark:border-white/5 flex flex-col justify-center">
+            <div className="relative h-full bg-white dark:bg-[#080d1a] rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 md:p-12 overflow-hidden border border-transparent dark:border-white/10 flex flex-col justify-center">
               
+              {/* Liquid Sheen Light Sweep Reflection on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+
               {/* Dynamic Floating Background Quote */}
               <motion.div
                 animate={{ rotate: [-12, -6, -12], y: [0, -6, 0] }}

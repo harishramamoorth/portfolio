@@ -4,10 +4,10 @@ import LiquidGlassCard from './LiquidGlassCard';
 
 const projects = [
   {
-    title: "Staffin",
-    company: "SaaS Platform",
-    tech: ["React.js", "Node.js", "MongoDB", "Hostinger"],
-    desc: "A scalable, multi-tenant SaaS platform designed to streamline attendance, payroll, and task management for 10,000+ employees. Features real-time workforce analytics, AI-driven automation, and responsive dashboards, all securely deployed on AWS.",
+    title: "StaffIn",
+    company: "Multi-Tenant HRMS SaaS Platform",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Hostinger"],
+    desc: "Developed a multi-tenant HRMS SaaS platform using React.js, Node.js, Express.js, and MongoDB for employee, attendance, payroll, task, leave, and notification management. Implemented authentication, REST APIs, responsive dashboards, employee tracking, task management, and admin/staff access workflows.",
     github: "https://github.com/harishramamoorth/Workemployee.git",
     live: "https://staffin.online/",
     caseStudy: "/Worksample/Harish-Staffin-WorkSample.pdf",
@@ -18,8 +18,8 @@ const projects = [
   },
   {
     title: "MRG Investor Platform",
-    company: " MRG ENGINEERING",
-    tech: ["React.js", "Node.js", "MongoDB", "render"],
+    company: "MRG ENGINEERING",
+    tech: ["React.js", "Node.js", "MongoDB", "Render"],
     desc: "A live portfolio web application automating investment purchases and profit sharing. Engineered complex backend logic to calculate yearly returns and distribute real-time ROI metrics to investors via secure RESTful APIs and responsive dashboards.",
     github: "https://github.com/harishramamoorth/Investment-management.git",
     live: "https://investor.mrgengg.com/investors",
@@ -44,10 +44,10 @@ const projects = [
     company: "IfT",
     tech: [
       "React.js", "Node.js", "Express.js", "MongoDB",
-      "JWT", "Razorpay", "AWS"
+      "JWT", "AWS(S3)"
     ],
     desc:
-      "Full-stack e-commerce platform built from scratch for purchasing physical books, e-books, and audiobooks, featuring responsive UI, interactive animations, JWT authentication, cart and order management, RESTful APIs, Razorpay payment integration, and AWS deployment.",
+      "Developed a full-stack e-commerce platform from scratch enabling users to browse and purchase physical books, e-books, and audiobooks with cart, checkout, and order management. Built responsive UI components, RESTful APIs, JWT authentication, and deployed on AWS.",
     github: "https://github.com/harishramamoorth/E-commerce-Bookstore.git",
     live: "https://iftchennai.in/",
     caseStudy: "/Worksample/Harish_E-commerce-WorkSample.pdf",

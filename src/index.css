@@ -45,7 +45,7 @@ html {
 
 @layer components {
   .container-custom {
-    @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;
+    @apply max-w-[1536px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-20;
   }
 
   /* Theme-aware glass card */

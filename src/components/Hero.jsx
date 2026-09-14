@@ -192,7 +192,7 @@ const Hero = ({ isLoading }) => {
               <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#projects" onClick={scrollToProjects} className="group flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl font-bold transition-all shadow-xl shadow-cyan-500/20 text-base">
                 View Projects <Briefcase size={20} className="group-hover:rotate-12 transition-transform" />
               </motion.a>
-              <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="/Scroll%20effect/Harish.R-UAE.pdf" download="Harish.R-UAE.pdf" target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-white dark:bg-[#1e2436] border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white rounded-2xl font-bold transition-all shadow-sm text-base">
+              <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="/Worksample/Harish-Resume-UAE.pdf" download="Harish-Resume-UAE.pdf" target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-white dark:bg-[#1e2436] border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white rounded-2xl font-bold transition-all shadow-sm text-base">
                 Resume <Download size={20} />
               </motion.a>
             </motion.div>
@@ -204,7 +204,7 @@ const Hero = ({ isLoading }) => {
               </div>
               <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs sm:text-sm font-bold tracking-wide">
                 <span className="flex items-center gap-1.5 text-gray-600 dark:text-gray-400"><MapPin size={16} className="text-cyan-500" /> Dubai, UAE</span>
-                <span className="flex items-center gap-1.5 text-gray-600 dark:text-gray-400"><Phone size={16} className="text-cyan-500" /> +91 9344508260</span>
+                <span className="flex items-center gap-1.5 text-gray-600 dark:text-gray-400"><Phone size={16} className="text-cyan-500" /> +971 58 217 7359</span>
               </div>
             </motion.div>
           </motion.div>

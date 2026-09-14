@@ -125,8 +125,8 @@ const Navbar = () => {
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
                 className={`relative px-4 py-2 rounded-full text-[13px] font-bold transition-colors duration-300 ${activeSection === link.id
-                    ? 'text-cyan-700 dark:text-cyan-300'
-                    : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                  ? 'text-cyan-700 dark:text-cyan-300'
+                  : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
                   }`}
               >
                 {/* Framer Motion Gliding Active Indicator */}
@@ -213,8 +213,8 @@ const Navbar = () => {
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
                 className={`group flex items-center justify-between p-3 sm:p-4 rounded-xl sm:rounded-2xl text-xl sm:text-2xl md:text-3xl font-black transition-all ${activeSection === link.id
-                    ? 'bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600 border border-cyan-500/20 shadow-inner'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                  ? 'bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600 border border-cyan-500/20 shadow-inner'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
                   }`}
               >
                 {link.name}

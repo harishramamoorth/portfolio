@@ -20,6 +20,12 @@ function App() {
   const [hasHover, setHasHover] = useState(false);
 
   useEffect(() => {
+    // Disable browser automatic scroll restoration so app always starts at the top Hero section
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
     // Detect if the device has hover capability (supports mouse pointer hover)
     const mediaQuery = window.matchMedia('(hover: hover)');
     setHasHover(mediaQuery.matches);
@@ -32,10 +38,20 @@ function App() {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+      window.scrollTo(0, 0);
+    } else {
+      document.body.style.overflow = '';
+      window.scrollTo(0, 0);
+    }
+  }, [isLoading]);
+
   return (
     // Only hide default cursor on screens supporting hover
     <div className={`bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen ${hasHover ? 'md:cursor-none' : ''}`}>
-      
+
       {/* <CloudScrollTransition /> */}
 
       {/* 3D Physics Trailing Cursor - only rendered on hover-capable devices */}
@@ -51,10 +67,13 @@ function App() {
       {/* Main Portfolio Content (Pre-rendered for butter-smooth transition without mounting stutter) */}
       <motion.div
         key="content"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isLoading ? 0 : 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        style={{ pointerEvents: isLoading ? "none" : "auto" }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{
+          opacity: isLoading ? 0 : 1,
+          scale: isLoading ? 0.95 : 1
+        }}
+        transition={{ duration: 0.8, ease: [0.65, 0, 0.35, 1] }}
+        style={{ pointerEvents: isLoading ? "none" : "auto", willChange: "transform, opacity" }}
       >
         <Navbar />
         <main className="pb-16 md:pb-0">
@@ -69,7 +88,7 @@ function App() {
         </main>
         <Footer />
       </motion.div>
-      
+
     </div>
   );
 }
